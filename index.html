@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate to Duminda - Web Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 50px 0;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .donation-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .donation-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .donation-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-header {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+        
+        .payment-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .payment-details {
+            margin: 20px 0;
+        }
+        
+        .detail-item {
+            margin: 10px 0;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            word-break: break-all;
+        }
+        
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .paypal-form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            background: #ffc107;
+            color: #333;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .btn:hover {
+            background: #e0a800;
+            transform: scale(1.05);
+        }
+        
+        .bank-transfer {
+            background: #e3f2fd;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: white;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .donation-sections {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Support Duminda</h1>
+        <p class="subtitle">Your generous donations help me continue creating amazing web development projects</p>
+    </header>
+    
+    <div class="container">
+        <div class="donation-sections">
+            <!-- PayPal Donation -->
+            <div class="donation-card">
+                <div class="card-header">
+                    <div class="payment-icon">💳</div>
+                    <h2>PayPal Donation</h2>
+                </div>
+                <p>Send your donation directly through PayPal</p>
+                <div class="payment-details">
+                    <div class="detail-item">
+                        <span class="label">Email:</span> dkoswatta9@gmail.com
+                    </div>
+                </div>
+                <form class="paypal-form" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_donations">
+                    <input type="hidden" name="business" value="dkoswatta9@gmail.com">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="submit" class="btn" value="Donate with PayPal">
+                </form>
+            </div>
+            
+            <!-- Payoneer Donation -->
+            <div class="donation-card">
+                <div class="card-header">
+                    <div class="payment-icon">🌐</div>
+                    <h2>Payoneer Donation</h2>
+                </div>
+                <p>Send your donation through Payoneer</p>
+                <div class="payment-details">
+                    <div class="detail-item">
+                        <span class="label">Email:</span> dkoswatta9@gmail.com
+                    </div>
+                </div>
+                <p style="margin-top: 20px; font-style: italic;">Please use the email above for Payoneer transfers</p>
+            </div>
+            
+            <!-- Bank Transfer -->
+            <div class="donation-card bank-transfer">
+                <div class="card-header">
+                    <div class="payment-icon">🏦</div>
+                    <h2>Bank Transfer</h2>
+                </div>
+                <p>Send your donation via international bank transfer</p>
+                <div class="payment-details">
+                    <div class="detail-item">
+                        <span class="label">Account Number:</span> 8163005904
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Card Holder Name:</span> koswaththage duminda sanjeewa koswaththa
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Beneficiary Bank:</span> Commercial Bank
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Country:</span> Sri Lanka
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">BIC/SWIFT Code:</span> CCEYLKLX
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">Currency:</span> USD
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2024 Duminda - Web Developer | Thank you for your support!</p>
+    </footer>
+</body>
+</html>
